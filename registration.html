@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html>
+    
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+   
+   <style>
+       .active, .btn:hover {
+           background-color: #666;
+            }
+        .navbar
+        {
+            border:5px solid #000;
+        }
+        .bgd {
+            background-size: cover;
+            width: 100%;
+           animation: turn 2s infinite;
+       }
+      /* @keyframes turn{
+           to{
+               transform: rotateY(360deg);
+           }
+       }*/
+       </style> 
+    
+</head>
+     
+<body>
+    <script>
+        function myFun()
+        {
+            var random=Math.floor(Math.random() * 100000);
+            alert("Your registration number is " + random);
+        }
+        
+        function textbox(select){
+            var selectedvalue=select.options[select.selectedIndex].value;
+            var txtother = document.getElementById("txtother");
+            txtother.disabled = selectedvalue == 1? false : true ;
+            if(!txtother.disabled){
+                txtother.focus();
+            }  
+        }
+        
+    </script>
+
+    <nav class="navbar navbar-expand-sm bg-light border-bottom border-dark  " style="height: 100px;">
+    <a class="navbar-brand" href="#">
+    <img src="logo.jpg" alt="logo" style="width:100px;height: 80px;padding-left: -10px;border: 5px solid #555;">
+    </a>
+        <div class="btn-group" style="float: right; ">
+            <button type="button"  class="btn btn-light btn-lg">HOME</button>
+            <button type="button"  class="btn btn-light btn-lg active">REGISTRATION</button>
+            <button type="button" class="btn btn-light  btn-lg">HACKATHON</button>
+            <div class="btn-group">
+                <button type="button" class="btn btn-light dropdown-toggle  btn-lg" data-toggle="dropdown">MORE</button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">ALL COURSES</a>
+                    <a class="dropdown-item" href="#">DISCUSSION CENTER</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bgd" style="background-image: url(bg.jpg);background-repeat: no-repeat;width: 100%;background-position: center;background-size: cover;" >
+        <div class="container" >
+            <form action="" style="padding-top: 40px;padding-left: 200px;">
+                <div class="form-group" style="width: 700px;">
+                    <p style="color:#fff "><strong>User Name :</strong></p>
+                    <input type="text" class="form-control form-control-sm" id="usr" name="username">
+                </div>
+                
+                <div class="form-group" style="width: 700px;">
+                    <p style="color:#fff "><strong>E-mail :</strong></p>
+                    <input type="password" class="form-control form-control-sm" id="pwd" name="password">
+                </div>
+                
+                <p style="color:#fff "><strong>Edition :</strong></p>
+                <select class="form-control form-control-sm" style="width: 700px;" id="sel1" name="sellist1">
+                    <option></option>
+                    <option>Software</option>
+                    <option>Hardware</option>
+                </select><br>
+                
+                <p style="color:#fff "><strong>Category :</strong></p>
+                <select class="form-control form-control-sm" style="width: 700px;" id="sel1" name="sellist1">
+                    <option></option>
+                    <option>Software</option>
+                    <option>Electronics</option>
+                    <option>Mechanical</option>
+                </select><br>
+                
+                <p style="color:#fff "><strong>Select College:</strong></p>
+                <select class="form-control form-control-sm" style="width: 700px;" id="select" name="sellist1" onchange="textbox(this)">
+                    <option></option>
+                    <option>Zakir Hussain College of Engineering and Technology</option>
+                    <option>International Institute of Information Technology,Hyderabad</option>
+                    <option> IIT Delhi,New Delhi</option>
+                    <option>IIT Bombay,Mumbai</option>
+                    <option> IIT Kanpur</option>
+                    <option> IIT Roorkee </option>
+                    <option>VIT Vellore</option>
+                    <option>NIT Calicut</option>
+                    <option> Birla Institute of Technology,Ranchi </option>
+                    <option>Jamia Millia Islamia,New Delhi </option>
+                    <option> Delhi Technological University,New Delhi</option>
+                    <option>SRM Institute of Science and Technology,Chennai</option>
+                    <option>Panjab University,Chandigarh</option>
+                    <option>R.V.College of Engineering,Bengaluru</option>
+                    <option>Sathyabama Institute of Science and Technology,Chennai</option>
+                    <option>IIT Jodhpur</option>
+                    <option>National Institute of Industrial Engineering,Mumbai</option>
+                    <option>C.V.Raman College of Engineering,Bhubaneswar</option>
+                    <option value="1">Other</option>
+                </select><br>
+                
+                <div class="form-group">
+                    <p style="color:#fff "><strong>Enter College Name :</strong></p>
+                    <input type="text" class="form-control form-control-sm" style="width: 700px;" name="username" id="txtother" disabled="disabled">
+                </div>
+                
+                <button onclick="myFun()" type="submit" class="btn btn-primary btn-dark">Submit</button><br><br>
+                
+            </form>
+        </div>
+     </div>
+    </body>
+</html>
